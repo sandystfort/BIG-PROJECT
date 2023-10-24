@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New England Patriots Fan Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>New England Patriots Fan Page</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#stats">Live Stats</a></li>
+        <li><a href="#stream">Watch Live</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <!-- Added link to comments section -->
+      </ul>
+    </nav>
+
+    <section id="schedule">
+      <h2>Upcoming Schedule</h2>
+      <!-- Add the Patriots' schedule here -->
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Opponent</th>
+          <th>Time</th>
+          <th>Location</th>
+        </tr>
+        <tr>
+          <td>October 29, 2023</td>
+          <td>New York Jets</td>
+          <td>1:00 PM</td>
+          <td>Gillette Stadium</td>
+        </tr>
+        <!-- Add more rows for additional games -->
+      </table>
+    </section>
+
+    <section id="stats">
+      <h2>Live Player Stats</h2>
+      <!-- Add live player stats here -->
+    </section>
+
+    <section id="stream">
+      <h2>Watch the Game Live</h2>
+      <!-- Add game streaming links here -->
+      <p>Watch the game live on ESPN+:</p>
+      <a
+        href="https://plus.espn.com/?ex_cid=DSS-Search-Google-71700000068344301-&s_kwcid=AL!8468!3!512848446643!e!!g!!espn%2B&cid=DSS-Search-Google-71700000068344301-&gad=1&gclid=EAIaIQobChMIrNP0h_uOggMVYUlHAR16nAsUEAAYASAAEgJcePD_BwE&gclsrc=aw.ds"
+        target="_blank"
+        >Watch on ESPN+</a
+      >
+    </section>
+
+    <!-- Comment Section -->
+    <section id="comments">
+      <h2>Comments</h2>
+      <!-- Comment Form -->
+      <form id="comment-form">
+        <label for="comment">Leave a Comment:</label>
+        <textarea id="comment" name="comment" required></textarea><br />
+        <input type="submit" value="Submit Comment" />
+      </form>
+
+      <!-- Display Comments -->
+      <div id="comment-list">
+        <!-- Comments will be added dynamically using JavaScript -->
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 New England Patriots Fan Page</p>
+    </footer>
+
+    <script>
+      // Function to handle comment form submission
+      document
+        .getElementById("comment-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get the comment content
+          var commentContent = document.getElementById("comment").value;
+
+          // Create a new comment element
+          var commentElement = document.createElement("p");
+          commentElement.textContent = commentContent;
+
+          // Append the comment to the comment list
+          var commentList = document.getElementById("comment-list");
+          commentList.appendChild(commentElement);
+
+          // Clear the comment input field
+          document.getElementById("comment").value = "";
+        });
+    </script>
+  </body>
+</html>

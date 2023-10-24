@@ -1,0 +1,79 @@
+/* Reset some default styles 
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style the header */
+header {
+  background-color: #002244; /* Navy Blue */
+  color: #ffffff; /* White */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Style the navigation menu */
+nav ul {
+  list-style: none;
+  text-align: center;
+  background-color: #002244; /* Navy Blue */
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff; /* White */
+}
+
+/* Style sections */
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: #ffffff; /* White */
+  border: 1px solid #002244; /* Navy Blue */
+}
+
+/* Style the red section */
+.red-section {
+  background-color: #ff0000; /* Red */
+  color: #ffffff; /* White */
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #002244; /* Navy Blue */
+}
+
+/* Style footer */
+footer {
+  text-align: center;
+  background-color: #002244; /* Navy Blue */
+  color: #ffffff; /* White */
+  padding: 10px;
+}
+/* Style the red section */
+.red-section {
+  background-color: #ff0000; /* Red */
+  color: #ffffff; /* White */
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #002244; /* Navy Blue */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav ul {
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}

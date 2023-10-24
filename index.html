@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Comment System</title>
+  </head>
+  <body>
+    <h1>Comment System</h1>
+
+    <!-- Login Form -->
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required /><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required /><br />
+
+      <input type="submit" value="Login" />
+    </form>
+
+    <!-- Comment Form (only visible to logged-in users) -->
+    <form id="comment-form" style="display: none">
+      <label for="comment">Comment:</label>
+      <textarea id="comment" name="comment" required></textarea><br />
+
+      <input type="submit" value="Add Comment" />
+    </form>
+
+    <!-- Display Comments -->
+    <h2>Comments</h2>
+    <ul id="comment-list">
+      <!-- Comments will be added dynamically using JavaScript -->
+    </ul>
+
+    <script>
+      // Check if the user is already logged in (using localStorage)
+      const userLoggedIn = localStorage.getItem("userLoggedIn");
+
+      // Toggle login and comment forms based on user login status
+      const loginForm = document.getElementById("login-form");
+      const commentForm = document.getElementById("comment-form");
+
+      if (userLoggedIn) {
+        loginForm.style.display = "none";
+        commentForm.style.display = "block";
+      } else {
+        loginForm.style.display = "block";
+        commentForm.style.display = "none";
+      }
+
+      // Handle login form submission
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Perform basic client-side "login" by setting a localStorage flag
+        localStorage.setItem("userLoggedIn", "true");
+
+        // Hide login form and show comment form
+        loginForm.style.display = "none";
+        commentForm.style.display = "block";
+      });
+
+      // Handle comment form submission
+      const commentList = document.getElementById("comment-list");
+      const commentFormElement = document.getElementById("comment-form");
+
+      commentFormElement.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Get the comment content from the form
+        const commentContent = document.getElementById("comment").value;
+
+        // Create a new comment element
+        const newComment = document.createElement("li");
+        newComment.textContent = commentContent;
+
+        // Add the comment to the comment list
+        commentList.appendChild(newComment);
+
+        // Clear the comment form
+        commentFormElement.reset();
+      });
+    </script>
+  </body>
+</html>
